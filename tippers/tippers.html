@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/tipper.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="get">
+            Модель <select name="model_title">
+            <option value="">Все</option>
+            {% for model in models %}
+            <option value="{{ model.title }}">{{ model.title }}</option>
+            {% endfor %}
+            </select> <input type="submit" value="Применить">
+    <table>
+        <caption>Машины которые сейчас в рейсе</caption>
+        <tbody>
+        <tr><th>Бортовой номер</th><th>Модель</th><th>Макс. грузоподъёмность</th><th>Текущий вес</th><th>Перегруз %</th></tr>
+        {% for tipper in tippers %}
+        <tr>
+            <td>{{ tipper.machine_number }}</td><td>{{ tipper.machine_title }}</td>
+            <td>{{ tipper.machine_carrying }}</td><td>{{ tipper.weight }}</td><td>{{ tipper.machine_overload }}%</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </form>
+</body>
+</html>

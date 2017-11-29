@@ -1,0 +1,18 @@
+body {
+    font-family: Arial;
+    padding-bottom:10px;
+}
+
+table, input, select {
+    background: #7FFFD4;
+    margin: 10px;
+}
+
+caption {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+TD, TH {
+    padding: 5px;
+   }
